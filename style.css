@@ -350,6 +350,43 @@ section {
   padding-top: 3.5rem;
 }
 
+.inventory-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 3rem 5rem;
+  background: #fff;
+  padding: 2.5rem clamp(1.25rem, 4vw, 4rem);
+  border-radius: 18px;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
+}
+
+.inventory-column {
+  display: grid;
+  align-content: start;
+  gap: 2.5rem;
+}
+
+.inventory-group h2 {
+  display: inline-block;
+  color: #f31575;
+  font-size: 2rem;
+  line-height: 1.1;
+  border-bottom: 3px solid #f31575;
+  margin-bottom: 0.55rem;
+}
+
+.inventory-group ul {
+  list-style: none;
+  display: grid;
+  gap: 0.15rem;
+  font-size: 1.1rem;
+  line-height: 1.35;
+}
+
+.inventory-group li::before {
+  content: "";
+}
+
 .product-card {
   overflow: hidden;
   padding: 0;
@@ -402,6 +439,11 @@ section {
 }
 
 @media (max-width: 768px) {
+  .inventory-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
   .order-details {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
